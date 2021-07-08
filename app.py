@@ -8,10 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import GradientBoostingRegressor
-from PIL import Image
 st.title('Country GDP Estimation Tool')
-image = Image.open(r'C:\Users\KAMALINI\Desktop\finalyearprj\world.jpeg')
-st.image(image)
 st.write('''
          This app will estimate the GDP per capita for a country, given some 
          attributes for that specific country as input.
