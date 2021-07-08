@@ -1,8 +1,6 @@
-import numpy as np
 import streamlit as st
 import pandas as pd
-import seaborn as sns
-from matplotlib import pyplot as plt
+immport numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
