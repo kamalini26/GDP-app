@@ -1,11 +1,14 @@
+import numpy as np
 import streamlit as st
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import GradientBoostingRegressor
+from PIL import Image
 st.title('Country GDP Estimation Tool')
+image = Image.open(r'C:\Users\KAMALINI\Desktop\finalyearprj\world.jpeg')
+st.image(image)
 st.write('''
          This app will estimate the GDP per capita for a country, given some 
          attributes for that specific country as input.
@@ -14,7 +17,7 @@ st.write('''
 
          ''')
 st.header('Input Attributes')
-att_popl = st.number_input('Population (Example: 7000000)', min_value=1e4, max_value=2e9, value=2e7)
+att_popl = st.number_input('Population ', min_value=1e4, max_value=2e9, value=2e7)
 att_area = st.number_input('Area (sq. Km)', min_value= 2.0, max_value= 17e6, value=6e5, step=1e4)
 att_dens = st.slider('Population Density (per sq. mile)', min_value= 0, max_value= 12000, value=400, step=10)
 att_cost = st.slider('Coastline/Area Ratio', min_value= 0, max_value= 800, value=30, step=10)
@@ -99,7 +102,7 @@ user_input = np.array([att_popl, att_area, att_dens, att_cost, att_migr,
                        att_regn_8, att_regn_9, att_regn_10, att_regn_11]).reshape(1,-1)
 
 def get_dataset():
-    data = pd.read_csv('countries of the world.csv')
+    data=  st.cache(pd.read_csv)(r'C:\Users\KAMALINI\Desktop\finalyearprj\countries of the world.csv')
     return data
 
 
