@@ -105,6 +105,9 @@ def get_dataset():
 
 
 data = get_dataset()
+is_check = st.checkbox("Display Data")
+         if is_check:
+                  st.write(df)
 data.columns = (["country","region","population","area","density",
                      "coastline_area_ratio","net_migration","infant_mortality",
                      "gdp_per_capita","literacy","phones","arable","crops","other",
