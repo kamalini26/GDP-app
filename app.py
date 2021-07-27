@@ -100,7 +100,7 @@ user_input = np.array([att_popl, att_area, att_dens, att_cost, att_migr,
                        att_regn_8, att_regn_9, att_regn_10, att_regn_11]).reshape(1,-1)
 
 def get_dataset():
-    data=  st.cache(pd.read_csv)(r'C:\Users\KAMALINI\Desktop\finalyearprj\countries of the world.csv')
+    data=  st.cache(pd.read_csv)('countries of the world.csv')
     return data
 
 
